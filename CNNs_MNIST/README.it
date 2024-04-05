@@ -1,0 +1,40 @@
+###############################################################################
+#                                                                             #
+#  DL4DT                                                                      #
+#                                                                             #
+#  L.Cavalli                                                                  #
+#                                                                             #
+#  Copyright (C) 2024 CINECA HPC department                                   #
+#                                                                             #
+#  This program is free software; you can redistribute it and/or modify it    #
+#  under the terms of the GNU Lesser General Public License as published by   #
+#  the Free Software Foundation; either version 3 of the License, or          #
+#  (at your option) any later version.                                        #
+#                                                                             #
+#  This program is distributed in the hope that it will be useful,            #
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of             #
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU          #
+#  Lesser General Public License for more details.                            #
+#                                                                             #
+#  You should have received a copy of the GNU Lesser General Public License   #
+#  along with this program; if not, write to the Free Software Foundation,    #
+#  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.        #
+#                                                                             #
+###############################################################################
+
+this is how the file in this folder are nested : 
+
+    jobscript_DL.sh
+          |
+          |
+          |
+          V
+     NN_MNIST_hvd.py
+
+
+jobscript_DL.sh is the jobscript with the SLURM directives which launch the NN_MNIST_hvd.py file with horovod. 
+
+NN_MNIST_hvd.py is the python file which train the CNNs suggested in the paper on the compressed dataset and test it. 
+Here you can choose if training the CNNs on the original dataset (x_train.npy) or the compressed one and if testing it 
+on the original test set (x_test.npy) or is version which uses D_train. 
+
