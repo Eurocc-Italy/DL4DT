@@ -14,6 +14,6 @@ Before using the `dictlearn` library you have to do the following steps :
  
    i.e.
  
-   `X, error = _sparse_encode( Y, D, algorithm ,  n_nonzero_coefs = n_nonzero_coefs, verbose=verbose )`
-                                   -----------
+   `X, error = _sparse_encode( Y, D, **algorithm** ,  n_nonzero_coefs = n_nonzero_coefs, verbose=verbose )`
+
 
