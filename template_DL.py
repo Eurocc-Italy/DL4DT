@@ -1,3 +1,27 @@
+###############################################################################
+#                                                                             #
+#  DL4DT                                                                      #
+#                                                                             #
+#  L.Cavalli                                                                  #
+#                                                                             #
+#  Copyright (C) 2024 CINECA HPC department                                   #
+#                                                                             #
+#  This program is free software; you can redistribute it and/or modify it    #
+#  under the terms of the GNU Lesser General Public License as published by   #
+#  the Free Software Foundation; either version 3 of the License, or          #
+#  (at your option) any later version.                                        #
+#                                                                             #
+#  This program is distributed in the hope that it will be useful,            #
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of             #
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU          #
+#  Lesser General Public License for more details.                            #
+#                                                                             #
+#  You should have received a copy of the GNU Lesser General Public License   #
+#  along with this program; if not, write to the Free Software Foundation,    #
+#  Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.        #
+#                                                                             #
+###############################################################################
+
 #--- Setup ---
 
 import numpy as np
@@ -68,9 +92,9 @@ cp = 1-((m*n+s*N)/(m*N))
 print('percentuale di compressione',cp)
 
 #--- savings ---
-#np.save('hpc_DL/Y_train_cp'+str(int(cp*100))+'_n'+str(n)+'_s'+str(s)+'_trval2.npy',Y)
-#np.save('hpc_DL/D_cp'+str(int(cp*100))+'_n'+str(n)+'_s'+str(s)+'_trval2.npy',D)
-#np.save('hpc_DL/X_cp'+str(cp)+'_n'+str(n)+'_s'+str(s)+'.npy',X)
+#np.save('Y_train_cp'+str(int(cp*100))+'_n'+str(n)+'_s'+str(s)+'_trval2.npy',Y)
+#np.save('D_cp'+str(int(cp*100))+'_n'+str(n)+'_s'+str(s)+'_trval2.npy',D)
+#np.save('X_cp'+str(cp)+'_n'+str(n)+'_s'+str(s)+'.npy',X)
 
 
 
