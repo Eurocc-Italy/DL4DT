@@ -1,0 +1,158 @@
+absl-py @ file:///tmp/build/80754af9/absl-py_1615411202722/work
+aiohttp @ file:///tmp/build/80754af9/aiohttp_1637844158574/work
+aiosignal @ file:///tmp/build/80754af9/aiosignal_1637843061372/work
+astunparse==1.6.3
+async-timeout @ file:///tmp/build/80754af9/async-timeout_1637851218186/work
+attrs @ file:///opt/conda/conda-bld/attrs_1642510447205/work
+av @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/av_1637161344763/work
+blinker==1.4
+blis @ file:///tmp/build/80754af9/cython-blis_1613319335612/work
+boto==2.49.0
+boto3 @ file:///opt/conda/conda-bld/boto3_1643638230110/work
+botocore @ file:///opt/conda/conda-bld/botocore_1642672735464/work
+Bottleneck==1.3.2
+brotlipy==0.7.0
+cached-property @ file:///tmp/build/80754af9/cached-property_1600785575025/work
+cachetools @ file:///tmp/build/80754af9/cachetools_1619597386817/work
+catalogue @ file:///opt/conda/conda-bld/catalogue_1643444354578/work
+certifi==2021.10.8
+cffi @ file:///tmp/build/80754af9/cffi_1625807838443/work
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+click @ file:///home/linux1/recipes/ci/click_1610990599742/work
+cloudpickle @ file:///Users/ktietz/demo/mc3/conda-bld/cloudpickle_1629142150447/work
+colorama @ file:///tmp/build/80754af9/colorama_1607707115595/work
+coverage @ file:///opt/conda/conda-bld/coverage_1642021546987/work
+cryptography @ file:///tmp/build/80754af9/cryptography_1633520369403/work
+cymem @ file:///tmp/build/80754af9/cymem_1613319259039/work
+Cython @ file:///tmp/build/80754af9/cython_1639474574311/work
+decorator @ file:///opt/conda/conda-bld/decorator_1643638310831/work
+dill @ file:///tmp/build/80754af9/dill_1623919422540/work
+dm-tree==0.1.5
+filelock @ file:///opt/conda/conda-bld/filelock_1642510437405/work
+fire @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/fire_1637443533739/work
+flatbuffers @ file:///tmp/build/80754af9/python-flatbuffers_1614345733764/work
+frozenlist @ file:///tmp/build/80754af9/frozenlist_1637767111923/work
+fsspec @ file:///tmp/build/80754af9/fsspec_1616582262277/work
+future==0.18.2
+gast @ file:///Users/ktietz/demo/mc3/conda-bld/gast_1628588903283/work
+google-api-core @ file:///C:/ci/google-api-core-split_1613980333946/work
+google-auth @ file:///tmp/build/80754af9/google-auth_1604100403705/work
+google-auth-oauthlib @ file:///tmp/build/80754af9/google-auth-oauthlib_1617120569401/work
+google-cloud-core @ file:///tmp/build/80754af9/google-cloud-core_1613414810663/work
+google-cloud-storage @ file:///tmp/build/80754af9/google-cloud-storage_1625077524075/work
+google-crc32c @ file:///tmp/build/80754af9/google-crc32c_1612242931720/work
+google-pasta @ file:///Users/ktietz/demo/mc3/conda-bld/google-pasta_1630577991354/work
+google-resumable-media @ file:///tmp/build/80754af9/google-resumable-media_1624367812531/work
+googleapis-common-protos @ file:///tmp/build/80754af9/googleapis-common-protos-feedstock_1613732354958/work
+grpcio @ file:///tmp/build/80754af9/grpcio_1613730115948/work
+h5py @ file:///tmp/build/80754af9/h5py_1622088445520/work
+horovod==0.22.1
+huggingface-hub @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/huggingface_hub_1637427812098/work
+idna @ file:///tmp/build/80754af9/idna_1637925883363/work
+importlib-metadata @ file:///tmp/build/80754af9/importlib-metadata_1638542885373/work
+importlib-resources @ file:///tmp/build/80754af9/importlib_resources_1625135880749/work
+jax @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/jax_1638807694965/work
+jaxlib @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/jaxlib_1638806710496/work/dist/jaxlib-0.1.71-cp38-none-manylinux2010_x86_64.whl
+Jinja2 @ file:///tmp/build/80754af9/jinja2_1635780242639/work
+jmespath @ file:///Users/ktietz/demo/mc3/conda-bld/jmespath_1630583964805/work
+joblib @ file:///tmp/build/80754af9/joblib_1601912903842/work
+keras @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/keras_1636814799939/work/keras-2.6.0-py2.py3-none-any.whl
+Keras-Preprocessing @ file:///tmp/build/80754af9/keras-preprocessing_1612283640596/work
+lightgbm==3.2.1
+lightning-bolts @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/pytorch-lightning-bolts_1638810772795/work
+Markdown @ file:///tmp/build/80754af9/markdown_1605111056890/work
+MarkupSafe @ file:///tmp/build/80754af9/markupsafe_1621528148836/work
+more-itertools @ file:///tmp/build/80754af9/more-itertools_1637733554872/work
+mpi4jax @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/mpi4jax_1638807832533/work
+mpi4py @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/mpi4py_1638805718073/work
+multidict @ file:///opt/conda/conda-bld/multidict_1640703752579/work
+murmurhash @ file:///tmp/build/80754af9/murmurhash_1607456108764/work
+networkx @ file:///tmp/build/80754af9/networkx_1633639043937/work
+numexpr @ file:///tmp/build/80754af9/numexpr_1640704205910/work
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1603479643886/work
+nvidia-dali-cuda110 @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/dali_1637364872786/work/build/dali/python
+nvidia-dali-tf-plugin-cuda110 @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/dali_1637364872786/work/dali_tf_plugin/dali_tf_sdist_build
+oauthlib @ file:///opt/conda/conda-bld/oauthlib_1644332107998/work
+olefile @ file:///Users/ktietz/demo/mc3/conda-bld/olefile_1629805411829/work
+onnx @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/onnx_1637359764406/work
+onnxconverter-common @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/onnxconverter-common_1637432846653/work
+onnxmltools @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/onnxmltools_1637443431444/work
+opt-einsum @ file:///tmp/build/80754af9/opt_einsum_1621500238896/work
+packaging @ file:///tmp/build/80754af9/packaging_1637314298585/work
+pandas==1.4.1
+pathy @ file:///tmp/build/80754af9/pathy_1619432881889/work
+Pillow==8.4.0
+pluggy @ file:///tmp/build/80754af9/pluggy_1615976321666/work
+portpicker==1.3.1
+preshed @ file:///tmp/build/80754af9/preshed_1621860845718/work
+promise @ file:///tmp/build/80754af9/promise_1614011636525/work
+protobuf==3.14.0
+psutil @ file:///tmp/build/80754af9/psutil_1612298023621/work
+py @ file:///opt/conda/conda-bld/py_1644396412707/work
+pyarrow==3.0.0
+pyasn1 @ file:///Users/ktietz/demo/mc3/conda-bld/pyasn1_1629708007385/work
+pyasn1-modules==0.2.8
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pydantic @ file:///opt/conda/conda-bld/pydantic_1636617910351/work
+pyDeprecate @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/pydeprecate_1637432554685/work
+PyJWT @ file:///tmp/build/80754af9/pyjwt_1619651636675/work
+pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1635333100036/work
+pyparsing @ file:///tmp/build/80754af9/pyparsing_1635766073266/work
+PySocks @ file:///tmp/build/80754af9/pysocks_1605305779399/work
+pytest==5.4.3
+python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
+pytorch-lightning @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/pytorch-lightning_1638810638117/work
+pytz==2021.3
+PyYAML==5.4.1
+regex @ file:///tmp/build/80754af9/regex_1606772724491/work
+requests @ file:///opt/conda/conda-bld/requests_1641824580448/work
+requests-oauthlib==1.3.0
+rsa @ file:///tmp/build/80754af9/rsa_1614366226499/work
+s3transfer @ file:///tmp/build/80754af9/s3transfer_1626435152308/work
+sacremoses @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/sacremoses_1637427773518/work
+scikit-learn @ file:///tmp/build/80754af9/scikit-learn_1642617107864/work
+scipy @ file:///tmp/build/80754af9/scipy_1641540193414/work
+sentencepiece==0.1.91
+shellingham @ file:///Users/ktietz/demo/mc3/conda-bld/shellingham_1629144685686/work
+six @ file:///tmp/build/80754af9/six_1605205327372/work
+skl2onnx @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/skl2onnx_1637432897147/work
+smart-open @ file:///tmp/build/80754af9/smart_open_1602262876581/work
+spacy @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/spacy_1637426960011/work
+spacy-legacy @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/spacy-legacy_1637426718277/work
+srsly @ file:///tmp/build/80754af9/srsly_1618696178884/work
+tabulate==0.8.9
+tensorboard @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/tensorboard_1637341110185/work/tmp_pip_dir
+tensorboard-data-server @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/tensorboard-data-server_1636815177868/work/tensorboard_data_server-0.6.1-py3-none-any.whl
+tensorboard-plugin-wit==1.6.0
+tensorflow @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/tensorflow-base_1636726326799/work/tensorflow_pkg/tensorflow-2.6.2-cp38-cp38-linux_x86_64.whl
+tensorflow-addons @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/tensorflow-addons-ext_1637441863926/work/tensorflow_addons_pkg/tensorflow_addons-0.14.0-cp38-cp38-linux_x86_64.whl
+tensorflow-datasets @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/tensorflow-datasets_1637480640216/work
+tensorflow-estimator @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/tensorflow-estimator_1636815008564/work/tensorflow_estimator_pkg/tensorflow_estimator-2.6.0-py2.py3-none-any.whl
+tensorflow-hub @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/tensorflow-hub_1637478229648/work/tensorflow_hub_pkg/tensorflow_hub-0.12.0-py2.py3-none-any.whl
+tensorflow-metadata==1.0.0
+tensorflow-probability @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/tensorflow-probability_1637443764539/work/tensorflow_probability_pkg/tensorflow_probability-0.14.1-py2.py3-none-any.whl
+tensorflow-text @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/tensorflow-text_1637479301008/work/tensorflow_text-2.6.0-cp38-cp38-linux_x86_64.whl
+termcolor==1.1.0
+tf-model-optimization-nightly @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/tensorflow-model-optimization_1637443573445/work/tensorflow_model_optimization_pkg/tf_model_optimization_nightly-0.5.1.dev20211120-py2.py3-none-any.whl
+tf2onnx @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/tf2onnx_1637432961784/work
+thinc @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/thinc_1637426769806/work
+threadpoolctl @ file:///Users/ktietz/demo/mc3/conda-bld/threadpoolctl_1629802263681/work
+tokenizers==0.10.3
+torch==1.9.1
+torchmetrics @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/torchmetrics_1637432439257/work
+torchtext==0.10.0a0+4da1de3
+torchvision==0.10.0
+tqdm @ file:///tmp/build/80754af9/tqdm_1635330843403/work
+transformers @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/transformers_1637428531588/work
+typeguard @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/typeguard_1637433130118/work
+typer @ file:///tmp/build/80754af9/typer_1619429661347/work
+typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1611751222202/work
+urllib3 @ file:///opt/conda/conda-bld/urllib3_1643638302206/work
+uWSGI @ file:///g100_scratch/userinternal/sorland2/open-ce/v1.4.0_11.1b/tmp_conda_build_root/uwsgi_1637356534085/work
+wasabi @ file:///tmp/build/80754af9/wasabi_1612219178408/work
+wcwidth @ file:///Users/ktietz/demo/mc3/conda-bld/wcwidth_1629357192024/work
+Werkzeug @ file:///tmp/build/80754af9/werkzeug_1635505089296/work
+wrapt==1.12.1
+xgboost==1.4.2
+yarl @ file:///tmp/build/80754af9/yarl_1598045023180/work
+zipp @ file:///opt/conda/conda-bld/zipp_1641824620731/work
