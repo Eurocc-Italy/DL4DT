@@ -161,27 +161,3 @@ Y = reader(path_D,path_X,path_Y)
 # otherwise it simply saves it in local
 reader(path_D,path_X,path_Y)
 ```
-
-#--------------------------------------------------------------------------
-
-!!! WARNING !!!
-
-Before using the `dictlearn` library you have to do the following steps : 
-
-1. go into the file <env>/lib/python3.8/site-packages/dictlearn/_dictionary_learning.py , where <env> is the environment where you installed dictlearn.
-2. go to line 259 and change `algorithm` with `str(algorithm)`
-3. go to line 263 and add the parameter `algorithm` in the `_sparse_encode` function.
- 
-   i.e.
- 
-   `X, error = _sparse_encode( Y, D, algorithm ,  n_nonzero_coefs = n_nonzero_coefs, verbose=verbose )`
-
-
-
-
-
-
-pip install numpy
-pip install scikit-learn
-pip install dictlearn
-
