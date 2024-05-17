@@ -32,15 +32,16 @@ Briefly, given a matrix of signals $Y \in \mathbb{R}^{m \times N}$ with $m \ll N
 <img src="https://github.com/Eurocc-Italy/DL4DT/assets/145253585/3bc5d675-7111-4b4d-a220-923ce170b1fb" height="300" />
 
 ## Environment setup and configuration
-DL4DT does not require a formal installation. You can download wherever you want from this repository and use the source command to load the environment from setup_DL4DT.sh
+You can download wherever you want this repository with
 ```
-git clone https://github.com/Eurocc-Italy/DL4DT.git # ??
+git clone https://github.com/Eurocc-Italy/DL4DT.git
 ```
-You find setup file in DL4DT/bin
+and setup the environment by installing the following libraries or using the ```requirments.txt``` file.
 ```
-source DL4DT/bin/setup_DL4DT.sh  # ??
+pip install numpy
+pip install scikit-learn
+pip install dictlearn
 ```
-
 ##  DL4DT.py
 
 ### 1. User Interface and Inputs
@@ -155,4 +156,12 @@ Before using the `dictlearn` library you have to do the following steps :
  
    `X, error = _sparse_encode( Y, D, algorithm ,  n_nonzero_coefs = n_nonzero_coefs, verbose=verbose )`
 
+
+
+
+
+
+pip install numpy
+pip install scikit-learn
+pip install dictlearn
 
