@@ -7,7 +7,7 @@ The presented workflow is capable of operating efficiently on a wide range of da
 
 ### Brief overview on Dictionary Learning (DL) and Orthogonal Matching Pursuit (OMP) algorithm
 
-A more detailed description is given in the thesis avaible in the folder "Docs". 
+A more detailed description is given in the thesis avaible in the folder "DOC". 
 
 Briefly, given a matrix of signals $Y \in \mathbb{R}^{m \times N}$ with $m \ll N$ we can both :
 * use DL to find both a dictionary $D \in \mathbb{R}^{m \times n}$ with $m \ll n$ and a sparse matrix $X \in \mathbb{R}^{n \times N}$ to represent $Y \approx DX$.
@@ -95,13 +95,31 @@ X,D,err = DL4DT(Y,cp,s,n,max_iter,jobs,verb)
 DL4DT(Y,cp,s,n,max_iter,jobs,verb)
 
 ```
- 
+
+Few more words about the input options.
+*  ```--path_Y ``` is the path where is the dataset in .npy format to compress. It can be either on edge or cloud, depending at which stage you are. 
+*  ```--path_X ``` is the path of the folder in which you want to save the sparse matrix $X$. It is saved in .npy format, as well. The name of the .npy file will be by default X_<rn_hour>_<rn_min>.npy, where <rn_hour> and <rn_min> are, respectively, the hour and the minute in which the matrix X is saved.
+*  ```--path_D ``` is the path where you want to save the dictionary $D$. It is saved in .npy format, as well. 
+*  ```--c ```, ```--n ``` and  ```--s ``` are related by the following formula $ c = 1 - \frac{(m*n + s*N)}{m*N}$ where m is the number of features of matrix $Y$ and N is the number of samples. If you pass 2 among them, the third parameter will be set automatically. More specific directives on which is the best choice of this parameters is reported in the thesis ( see DOC folder).
+*  ```--verb = 1 ``` print a summary of your compression parameters as
+  ```
+  ##########################################
+        Your DL4DT compression details
+  ##########################################
+   Compression achieved = 80.09%.
+   Error (||Y-DX||) = 36.6539
+   Sparsity pattern = 10
+   Number of atoms = 156
+   Time = 189.4 s
+  ```
+
  ### 2. Output
 
- - if we are on cloud DL4DT saves $D$ and $X$ in  ```.npy``` format.
- - if you are on edge DL4DT saves only the matrix $X$ in ```.npy``` format.
+ - if we are on cloud DL4DT saves $D$ and $X$ in  ```.npy``` format in the paths described above.
+ - if you are on edge DL4DT saves only the matrix $X$ in ```.npy``` format in the path described above.
+   
+More info about the ```.npy``` format can be found [here](https://numpy.org/devdocs/reference/generated/numpy.lib.format.html). It can be loaded as numpy array with the command ``` Y = np.load("path/Y.npy")```.
 
-   By default $D$ will be saved as ```data/D.npy```, while $X$ as ```data/sparse_matrix/X_<hour>_<min>.npy``` where ```<hour>_<min>``` is the time when the matrix $X$ is saved. Othewise in the DL4DT input arguments you can specify a custom directory where to save them.
   
  ## reader_cloud.py : 
  
