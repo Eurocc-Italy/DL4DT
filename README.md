@@ -55,21 +55,23 @@ To see all CL flags use ```--help``` flag :
  
 ```
 $ python .\DL4DT.py --help
-usage: DL4DT.py [-h] [--path ] [--c  ] [--n  ] [--s  ] [--max_iter ] [--jobs ] [--verb ]
+usage: DL4DT.py [-h] --path_Y   [--path_D ] [--path_X ] [--c  ] [--n  ] [--s  ] [--max_iter ] [--jobs ] [--verb ]
 
-Decompose a matrix Y into D and X (DL4DT compression)
+DL4DT compression
 
 options:
   -h, --help    show this help message and exit
-  --path        path of the dataset, in the form "data/<name>.npy"
-  --c           compression level.* Value between 0 and 1.
+  --path_Y      path of the dataset Y
+  --path_D      path where to save/ from where upload the dictionary D. Default = "data/D.npy"
+  --path_X      path where to save sparse matrix X. Default = "data/sparse_matrix/X_<rn_hour>_<rn_min>.npy"
+  --c           required compression level (between 0 and 1) *
   --n           number of atoms *
   --s           sparsity level *
-  --max_iter    max number of DL iterations
-  --jobs        number of parallel jobs
-  --verb        verbosity level (0 : no, 1 : yes)
+  --max_iter    max number of DL iterations. Default = 10
+  --jobs        number of parallel jobs. Default = 1. If > 1 be careful to choose it consistently with the required resources
+  --verb        verbosity option (0 = no, 1 = yes)
 
-* It is enough to choose 2 values among c,n and s.
+* Choose at least 2 values among c,n and s
 ```
 
 The code can be also used in a python script as follow:
