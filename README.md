@@ -49,7 +49,7 @@ pip install dictlearn
 
 DL4DT is callable from the command line (CL):
 ```
-$ python .\DL4DT.py --path "data/datasets/x_train.npy"--c 0.8 --s 10 --max_iter 10 --verb 1 --jobs 3
+$ python .\DL4DT.py --path_Y "data/datasets/x_train.npy" --path_X "data/sparse_matrix" --path_D "data/D.npy" --c 0.8 --s 10 --max_iter 10 --jobs 3 --verb 1
 ```
 
 To see all CL flags use ```--help``` flag :
