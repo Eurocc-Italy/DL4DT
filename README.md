@@ -56,7 +56,7 @@ To see all CL flags use ```--help``` flag :
  
 ```
 $ python .\DL4DT.py --help
-usage: DL4DT.py [-h] --path_Y   [--path_D ] [--path_X ] [--c  ] [--n  ] [--s  ] [--max_iter ] [--jobs ] [--verb ]
+usage: DL4DT.py [-h] --path_Y   --path_D   --path_X   [--c  ] [--n  ] [--s  ] [--max_iter ] [--jobs ] [--verb ]
 
 DL4DT compression
 
@@ -145,10 +145,11 @@ usage: reader_cloud.py [-h] --path_X   [--path_D ] [--path_Y ]
 Save the compressed dataset in a desired folder. This part runs on the Cloud.
 
 options:
-  -h, --help  show this help message and exit
-  --path_X    path of the sparse matrix X
-  --path_D    path of the dictionary D
-  --path_Y    destination path of the compressed dataset 
+  -h, --help   show this help message and exit
+  --path_X     path of the sparse matrix X, in the form "<your_path>/<name>.npy"
+  --path_D     path of the dictionary D, in the form "data/<name>.npy"
+  --path_Y     destination path of the compressed dataset in the form "<path>/<name>.npy"
+  --Y_shape    f = fat output matrix. t = tall output matrix.
 ```
  
  about the --Y_shape flag : a matrix $Y \in \mathbb{R}^{m \times N}$ is "fat" when $m \ll N$ and "tall" when $m \gg N$.
