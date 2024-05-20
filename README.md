@@ -171,5 +171,4 @@ reader(path_D,path_X,path_Y,Y_shape=y_shape)
 
 ### 2. Output
 
-It save on Cloud the compressed matrix in ```.npy``` format at the path passed with ```path_Y``` parameter. 
-
+It saves on Cloud the compressed matrix in ```.npy``` format at the path passed with ```path_Y``` parameter. 
