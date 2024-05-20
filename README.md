@@ -95,7 +95,7 @@ DL4DT(path_Y,path_D,path_X,c=c,s=s,max_iter=iter,jobs=j,verb=v)
 
 Few more words about the input options.
 *  ```--path_Y ``` is the path of the dataset to compress. It can be either on edge or cloud, depending at which stage you are. The dataset must be in .npy format and it is preferable to be 2 dimensional as $Y \in \mathbb{R}^{m \times N}$ with $m \ll N$.
-*  ```--path_X ``` is the path of the folder in which you want to save the sparse matrix $X$. It is saved in .npy format, as well. If you pass the path without the name of the output file (i.e. "datasets/sparse_matrix") the name of the .npy file will be set by default as X_<rn_hour>_<rn_min>.npy, where <rn_hour> and <rn_min> are, respectively, the hour and the minute in which the matrix $X$ is saved.
+*  ```--path_X ``` is the desired path where you want to save the sparse matrix $X$. It is saved in .npy format, as well. If you provide the path without the output file name (i.e. "datasets/sparse_matrix") the .npy file will be automatically named X_<rn_hour>_<rn_min>.npy, where <rn_hour> and <rn_min> correspond, respectively, to the hour and the minute when the matrix $X$ is saved.
 *  ```--path_D ``` is the path where you want to save the dictionary $D$. It is saved in .npy format, as well. 
 *  ```--c ```, ```--n ``` and  ```--s ``` are related by the following formula $ c = 1 - \frac{(m*n + s*N)}{m*N}$ where m is the number of features of matrix $Y$ and N is the number of samples. If you pass 2 among them, the third parameter will be set automatically. More specific directives on which is the best choice of this parameters is reported in the thesis (see DOC folder).
 *  ```--verb = 1 ``` print a summary of your compression parameters as
