@@ -80,19 +80,22 @@ The code can be also used in a python script as follow:
 from DL4DT import DL4DT
 import numpy as np 
 
-path = "data/datasets/x_train.npy"
-Y = np.load(path)     
-cp = 0.8
-s = 10
-max_iter = 10
-jobs = 3
-verb = 1
+path_Y = "data/x_train.npy"
+path_D = "data/D.npy"
+path_X= "data/X_new.npy"
+Y = np.load(path_Y)     
+
+c=0.8
+s=10
+iter=10
+j=3
+v=1
 
 # if you want to work further with D and X you can save them
-X,D,err = DL4DT(Y,cp,s,n,max_iter,jobs,verb)
+X,D,err = DL4DT(path_Y,path_D,path_X,c=c,s=s,max_iter=iter,jobs=j,verb=v)
 
 # otherwise they are simply saved accordingly to path_X and path_D
-DL4DT(Y,cp,s,n,max_iter,jobs,verb)
+DL4DT(path_Y,path_D,path_X,c=c,s=s,max_iter=iter,jobs=j,verb=v)
 
 ```
 
@@ -129,7 +132,7 @@ More info about the ```.npy``` format can be found [here](https://numpy.org/devd
  
  reader_cloud.py is callable from the command line (CL):
  ```
- $ python .\reader_cloud.py --path_X  "data/sparse_matrix/X_15_04.npy" --path_D "data/D.npy"  --path_Y "output/Y_15_04.npy"
+ $ python .\reader_cloud.py --path_X  "data/sparse_matrix/X_15_04.npy" --path_D "data/D.npy"  --path_Y "output/Y_15_04.npy" --T yes
  ```
 
 To see all CL flags use ```--help``` flag :
@@ -146,18 +149,27 @@ options:
   --path_D    path of the dictionary D
   --path_Y    destination path of the compressed dataset 
 ```
+ 
+ about the --Y_shape flag : a matrix $Y \in \mathbb{R}^{m \times N}$ is "fat" when $m \ll N$ and "tall" when $m \gg N$.
+ 
  The code can be also used in a python script as follow:
 
 ```
 from reader_cloud import reader
 
-path_X = "data/sparse_matrix/X_15_04.npy"
+path_X = "data/X_11_11.npy"
 path_D = "data/D.npy"
-path_Y = "output/Y_15_04.npy"
+path_Y = "output/Y_11_11.npy"
+y_shape='f'
 
 # if you want to work further with Y 
-Y = reader(path_D,path_X,path_Y)
+Y = reader(path_D,path_X,path_Y,Y_shape=y_shape)
 
 # otherwise it simply saves it in local accordingly to path_Y
-reader(path_D,path_X,path_Y)
+reader(path_D,path_X,path_Y,Y_shape=y_shape)
 ```
+
+### 2. Output
+
+It save on Cloud the compressed matrix in ```.npy``` format at the path passed with ```path_Y``` parameter. 
+
