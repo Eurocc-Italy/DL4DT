@@ -61,9 +61,9 @@ DL4DT compression
 
 options:
   -h, --help    show this help message and exit
-  --path_Y      path of the dataset Y
-  --path_D      path where to save/ from where upload the dictionary D. Default = "data/D.npy"
-  --path_X      path where to save sparse matrix X. Default = "data/sparse_matrix/X_<rn_hour>_<rn_min>.npy"
+  --path_Y      path of the dataset Y. Example: "<your_path>/Y.npy"
+  --path_D      path where to save/ from where upload the dictionary D. Example: "<your_path>/D.npy"
+  --path_X      path where to save sparse matrix X. Example: "<your_path>/X_<rn_hour>_<rn_min>.npy"
   --c           required compression level (between 0 and 1) *
   --n           number of atoms *
   --s           sparsity level *
