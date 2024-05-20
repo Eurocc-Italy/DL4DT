@@ -84,16 +84,9 @@ import numpy as np
 path_Y = "data/x_train.npy"
 path_D = "data/D.npy"
 path_X= "data/X_new.npy"
-Y = np.load(path_Y)     
-
-c=0.8
-s=10
-iter=10
-j=3
-v=1
 
 # if you want to work further with D and X you can save them
-X,D,err = DL4DT(path_Y,path_D,path_X,c=c,s=s,max_iter=iter,jobs=j,verb=v)
+X,D,err = DL4DT(path_Y,path_D,path_X,c = 0.8,s = 10,max_iter = 10,jobs = 3,verb = 1)
 
 # otherwise they are simply saved accordingly to path_X and path_D
 DL4DT(path_Y,path_D,path_X,c=c,s=s,max_iter=iter,jobs=j,verb=v)
