@@ -19,7 +19,7 @@ Briefly, given a matrix of signals $Y \in \mathbb{R}^{m \times N}$ with $m \ll N
   Here, the DL factorization is applied on it by running ```DL4DT.py```, resulting in the learning of a reliable dictionary $D$ and the sparse representation $X$ (such that $Y \approx DX$).
   The user then must take care of both saving the dictionary $D$ on the cloud and transmit it to the edge.
 
-  <img src="https://github.com/Eurocc-Italy/DL4DT/assets/145253585/137fe276-8eff-497e-9a5b-e631907cec09" height="300" />
+  <img src="https://github.com/Eurocc-Italy/DL4DT/assets/145253585/b5e0286c-f314-42e6-af85-971d9c410da7" height="280" />
 
  ### Next stages :
 
@@ -29,7 +29,8 @@ Briefly, given a matrix of signals $Y \in \mathbb{R}^{m \times N}$ with $m \ll N
   This step can be repeated for every new collected dataset on edge as long as the dictionary $D$ is enough representative. Users have the flexibility to decide when the dictionary $D$ has to be updated, in order to have more
   reliable results. A reasonable choice can be updating the dictionary after a fixed period of time or when the accuracy of the AI algorithm on the compressed dataset starts to decrease too much. 
 
-<img src="https://github.com/Eurocc-Italy/DL4DT/assets/145253585/3bc5d675-7111-4b4d-a220-923ce170b1fb" height="300" />
+<img src="https://github.com/Eurocc-Italy/DL4DT/assets/145253585/123e69d9-1f3a-4485-a7b6-f8d54682b2e8" height="300" />
+
 
 ## Environment setup and configuration
 You can download wherever you prefer this repository with
