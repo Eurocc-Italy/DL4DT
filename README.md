@@ -120,7 +120,7 @@ More info about the ```.npy``` format can be found [here](https://numpy.org/devd
   
  ## reader_cloud.py : 
  
- It reconstructs the final compression dataset on cloud.
+ It reconstructs the final compressed dataset on cloud.
 
  ### 1. User Interface and Inputs
  
