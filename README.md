@@ -13,27 +13,28 @@ Briefly, given a matrix of signals $Y \in \mathbb{R}^{m \times N}$ with $m \ll N
 * use DL to find both a dictionary $D \in \mathbb{R}^{m \times n}$ with $m \ll n$ and a sparse matrix $X \in \mathbb{R}^{n \times N}$ to represent $Y \approx DX$.
 * use OMP to find only the sparse matrix $X$ such that $Y \approx DX$ if the dictionary $D$ is given.
 
+Therefore, it is preferable to have an input dataset with 2 dimensions: $m$ and $N$, where $N$ is the number of samples and $m$ is the number of features or variables orthe elements that describe a sample of the considered event.
 
-### Stage 0 :
-  At the very beginning of the workflow, the entire dataset $Y$ collected on edge is transmitted to the cloud.
-  Here, the DL factorization is applied on it by running ```DL4DT.py```, resulting in the learning of a reliable dictionary $D$ and the sparse representation $X$ (such that $Y \approx DX$).
-  The user then must take care of both saving the dictionary $D$ on the cloud and transmit it to the edge.
+
+### Algorithm setup :
+  As first step of the workflow:
+  1. the entire dataset $Y$ collected on the edge needs to be transmitted to the cloud without any compression. It is computationally heavy but it has to be done only once.
+  2. On the cloud, the DL factorization is applied on it by running ```DL4DT.py```. It results in learning a reliable dictionary $D$ and the sparse representation $X$ such that $Y \approx DX$.
+  3. Then, the user  must take care of both saving the dictionary $D$ on the cloud and transmit it to the edge.
 
   <img src="https://github.com/Eurocc-Italy/DL4DT/assets/145253585/b5e0286c-f314-42e6-af85-971d9c410da7" height="280" />
 
- ### Next stages :
+ ### Production :
 
   Afterwards, when a new smaller dataset of signals $Y_1$ is collected on edge, ```DL4DT.py``` computes only its sparse representation $X_1$ via OMP (i.e. such that $Y_1 \approx DX_1$). 
   In this way, instead of transferring the entire dataset $Y_1$ to the cloud, it will be enough to send only $X_1$ which being very sparse is very lightweight. 
-  The script ```reader_cloud.py``` takes care of reconstructing the compressed version of the signal $Y_1$ on the cloud, by simply combining the already computed $D$ and the recent $X_1$.
-  This step can be repeated for every new collected dataset on edge as long as the dictionary $D$ is enough representative. Users have the flexibility to decide when the dictionary $D$ has to be updated, in order to have more
-  reliable results. A reasonable choice can be updating the dictionary after a fixed period of time or when the accuracy of the AI algorithm on the compressed dataset starts to decrease too much. 
+  The script ```reader_cloud.py``` takes care of reconstructing the compressed version of the signal $Y_1$ on the cloud, by simply combining the already computed $D$ and the recent $X_1$. This step can be repeated for every new collected dataset on edge as long as the dictionary $D$ is enough representative. Users have the flexibility to decide when the dictionary $D$ has to be updated, in order to have more reliable results. A reasonable choice can be updating the dictionary after a fixed period of time or when the accuracy of the AI algorithm on the compressed dataset starts to decrease too much. 
 
 <img src="https://github.com/Eurocc-Italy/DL4DT/assets/145253585/123e69d9-1f3a-4485-a7b6-f8d54682b2e8" height="300" />
 
 
 ## Environment setup and configuration
-You can download wherever you prefer this repository with
+You can download this repository both on the edge and on the cloud with
 ```
 git clone https://github.com/Eurocc-Italy/DL4DT.git
 ```
@@ -49,13 +50,13 @@ pip install dictlearn
 
 DL4DT is callable from the command line (CL):
 ```
-$ python .\DL4DT.py --path_Y "data/datasets/x_train.npy" --path_X "data/sparse_matrix" --path_D "data/D.npy" --c 0.8 --s 10 --max_iter 10 --jobs 3 --verb 1
+$ python DL4DT.py --path_Y "data/datasets/x_train.npy" --path_X "data/sparse_matrix" --path_D "data/D.npy" --c 0.8 --s 10 --max_iter 10 --jobs 3 --verb 1
 ```
 
 To see all CL flags use ```--help``` flag :
  
 ```
-$ python .\DL4DT.py --help
+$ python DL4DT.py --help
 usage: DL4DT.py [-h] --path_Y   --path_D   --path_X   [--c  ] [--n  ] [--s  ] [--max_iter ] [--jobs ] [--verb ]
 
 DL4DT compression
@@ -75,27 +76,27 @@ options:
 * Choose at least 2 values among c,n and s
 ```
 
-The code can be also used in a python script as follow:
+The code can be also used as python library as follow:
 
 ```
-from DL4DT import DL4DT
+from DL4DT import DL4DT_fact
 import numpy as np 
 
 path_Y = "data/x_train.npy"
 path_D = "data/D.npy"
 path_X= "data/X_new.npy"
 
-# if you want to work further with D and X you can save them
-X,D,err = DL4DT(path_Y,path_D,path_X,c = 0.8,s = 10,max_iter = 10,jobs = 3,verb = 1)
+# you can save D and X locally accordingly to path_X and path_D
+DL4DT_fact(path_Y,path_D,path_X,c = 0.8,s = 10,max_iter = 10,jobs = 3,verb = 1)
 
-# otherwise they are simply saved accordingly to path_X and path_D
-DL4DT(path_Y,path_D,path_X,c=c,s=s,max_iter=iter,jobs=j,verb=v)
+# otherwise, if you want to work further with D and X in the script, you can return them 
+X,D,err = DL4DT_fact(path_Y,path_D,path_X,c=c,s=s,max_iter=iter,jobs=j,verb=v)
 
 ```
 
-Few more words about the input options.
+Brief description of the input options:
 *  ```--path_Y ``` is the path of the dataset to compress. It can be either on edge or cloud, depending at which stage you are. The dataset must be in .npy format and it is preferable to be 2 dimensional as $Y \in \mathbb{R}^{m \times N}$ with $m \ll N$.
-*  ```--path_X ``` is the desired path where you want to save the sparse matrix $X$. It is saved in .npy format, as well. If you provide the path without the output file name (i.e. "datasets/sparse_matrix") the .npy file will be automatically named X_<rn_hour>_<rn_min>.npy, where <rn_hour> and <rn_min> correspond, respectively, to the hour and the minute when the matrix $X$ is saved.
+*  ```--path_X ``` is the desired path where you want to save the sparse matrix $X$. It is saved in .npy format, as well. If you provide the path without the output file name (i.e. "datasets/sparse_matrix") the .npy file will be automatically named X_<hh>_<mm>.npy, where <hh> and <mm> correspond, respectively, to the hour and the minute when the matrix $X$ is saved.
 *  ```--path_D ``` is the path where you want to save the dictionary $D$. It is saved in .npy format, as well. 
 *  ```--c ```, ```--n ``` and  ```--s ``` are related by the following formula $ c = 1 - \frac{(m*n + s*N)}{m*N}$ where m is the number of features of matrix $Y$ and N is the number of samples. If you pass 2 among them, the third parameter will be set automatically. More specific directives on which is the best choice of this parameters is reported in the thesis (see DOC folder).
 *  ```--verb = 1 ``` print a summary of your compression parameters as
@@ -110,12 +111,13 @@ Few more words about the input options.
    Time = 189.4 s
   ```
 
+descrivere errore e 
+
  ### 2. Output
+ 
+On the cloud DL4DT saves both $D$ and $X$ in the paths described above, while on edge it saves only the matrix $X$ in the path described above.
 
- - if we are on cloud DL4DT saves $D$ and $X$ in  ```.npy``` format in the paths described above.
- - if you are on edge DL4DT saves only the matrix $X$ in ```.npy``` format in the path described above.
-
-More info about the ```.npy``` format can be found [here](https://numpy.org/devdocs/reference/generated/numpy.lib.format.html). It can be loaded as two-dimensional numpy array with the command ``` Y = np.load("path/Y.npy")```.
+Both $D$ and $X$ are saved in  ```.npy``` format. More info about the ```.npy``` format can be found [here](https://numpy.org/devdocs/reference/generated/numpy.lib.format.html). A ```.npy``` file can be loaded as two-dimensional numpy array with the command ``` Y = np.load("path/Y.npy")```.
 
   
  ## reader_cloud.py : 
@@ -126,7 +128,7 @@ More info about the ```.npy``` format can be found [here](https://numpy.org/devd
  
  reader_cloud.py is callable from the command line (CL):
  ```
- $ python .\reader_cloud.py --path_X  "data/sparse_matrix/X_15_04.npy" --path_D "data/D.npy"  --path_Y "output/Y_15_04.npy" --T yes
+ $ python reader_cloud.py --path_X  "data/sparse_matrix/X_15_04.npy" --path_D "data/D.npy"  --path_Y "output/Y_15_04.npy" --T yes
  ```
 
 To see all CL flags use ```--help``` flag :
@@ -135,11 +137,11 @@ To see all CL flags use ```--help``` flag :
 $ python .\reader_cloud.py -h 
 usage: reader_cloud.py [-h] --path_X   [--path_D ] [--path_Y ]
 
-Save the compressed dataset in a desired folder. This part runs on the Cloud.
+Reconstructs the dataset and save it on the cloud. 
 
 options:
   -h, --help   show this help message and exit
-  --path_X     path of the sparse matrix X, in the form "<your_path>/<name>.npy"
+  --path_X     path where X has been transferred on the cloud, in the form "<your_path>/<name>.npy"
   --path_D     path of the dictionary D, in the form "data/<name>.npy"
   --path_Y     destination path of the compressed dataset in the form "<path>/<name>.npy"
   --Y_shape    f = fat output matrix. t = tall output matrix.
